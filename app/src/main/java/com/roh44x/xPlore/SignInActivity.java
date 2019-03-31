@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //TODO E TERMINATA CLASA
+
     //declare widgets
 
     public EditText etEmail, etPassword;

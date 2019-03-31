@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/itemHome"
+    android:icon="@drawable/icon_home"
+    android:title="Home"/>
+
+    <item
+        android:id="@+id/itemEvents"
+        android:icon="@drawable/icon_event"
+        android:title="Time Table"/>
+
+
+    <item
+        android:id="@+id/itemInteract"
+        android:icon="@drawable/icon_interact"
+        android:title="Interact"/>
+    <item
+    android:id="@+id/itemProfile"
+    android:icon="@drawable/icon_user"
+    android:title="My Profile"/>
+
+</menu>

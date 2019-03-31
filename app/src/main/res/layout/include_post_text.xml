@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/postTitle"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textStyle="bold"
+        tools:text="My First Post" />
+
+
+    <TextView
+        android:id="@+id/postBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lectus lacus, imperdiet vel magna sit amet, bibendum facilisis elit. Mauris luctus diam non metus hendrerit, eget condimentum ipsum pulvinar. Etiam vel tortor tempus, blandit massa quis, auctor orci. Vivamus sollicitudin, urna vitae ultrices suscipit, augue tellus facilisis ipsum, ac tristique orci lacus ut lacus. Nunc erat augue, tincidunt id accumsan ac, placerat ut purus. Ut egestas lacus at consectetur dictum. Vivamus laoreet tellus id mi consectetur, id vestibulum mauris mollis." />
+
+</LinearLayout>
