@@ -28,6 +28,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     public FirebaseAuth mAuth;
     public FirebaseDatabase mDatabase;
     public DatabaseReference userDatabase;
+    public DatabaseReference postDatabase;
 
 
     //declare widgets
@@ -59,6 +60,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
         userDatabase = mDatabase.getReference();
+        postDatabase = mDatabase.getReference();
     }
 
 
@@ -81,8 +83,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
                         {
                             Toast.makeText(NewPostActivity.this, "User could not be fetched.", Toast.LENGTH_SHORT).show();
                         }else{
-                            String username = user.firstName + user.lastName;
-                            postNewEvent(userId, username, title, body);
+                            postNewEvent(userId, user.firstName, title, body);
                         }
 
                         finish();
@@ -98,14 +99,15 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
     public void postNewEvent(String userId, String username, String title, String body)
     {
-        String key = userDatabase.child("posts").push().getKey();
-        Post post =  new Post(userId, userId, title, body);
+        String key = postDatabase.child("posts").push().getKey();
+        Post post =  new Post(userId, username, title, body);
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("/posts/" + key, postValues);
         childUpdates.put("/user-posts " + userId + "/" + key, postValues);
 
-        userDatabase.updateChildren(childUpdates);
+        postDatabase.updateChildren(childUpdates);
     }
 
     @Override
