@@ -1,20 +1,17 @@
 package com.roh44x.xPlore.fragments;
-
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.roh44x.xPlore.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 
-public class InteractFragment extends Fragment {
-    @Nullable
+public class InteractFragment extends SearchUserFragment {
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.interact, null);
-        return view;
+    public Query getQuery(DatabaseReference databaseReference) {
+        Query search = databaseReference.child("Users").limitToFirst(100);
+        return search;
     }
 }
+
+

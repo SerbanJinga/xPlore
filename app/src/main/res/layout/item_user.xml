@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/postAuthorProfilePhoto"
+        android:src="@drawable/ic_action_account_circle_40"
+        android:layout_width="40dp"
+        android:layout_height="60dp" />
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/userName"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Numele Meu"
+        android:layout_marginLeft="10dp"
+        style=":@style/Base.TextAppearance.AppCompat.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/userDegree"
+        android:gravity="center"
+        android:text="Student"
+        android:layout_marginLeft="10dp"
+        style=":@style/Base.TextAppearance.AppCompat.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    <ImageButton
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/add_friend"
+        android:layout_marginTop="20dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+        <TextView
+            android:layout_marginLeft="180dp"
+            android:text="Add Friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
