@@ -16,6 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.roh44x.xPlore.model.AllHours;
 import com.roh44x.xPlore.model.User;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public FirebaseAuth mAuth;
     public FirebaseDatabase mDatabase;
     public DatabaseReference userDatabase;
+    public DatabaseReference schedguleDatabase;
 
     //declare widgets
     public EditText etFirstName, etLastName, etEmail, etPassword, etRepeatPassword;
@@ -61,6 +63,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
         userDatabase = mDatabase.getReference();
+        schedguleDatabase = mDatabase.getReference();
     }
 
     public void signUpWithEmailAndPassword(String email, String password)
@@ -72,6 +75,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         if(task.isSuccessful())
                         {
                             storeUserInDatabase();
+                            storeSchedguleInDatabase();
                         }else{
                             String error = task.getException().getMessage();
                             Toast.makeText(SignUpActivity.this, error, Toast.LENGTH_SHORT).show();
@@ -109,6 +113,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         }
                     }
                 });
+    }
+
+    public void storeSchedguleInDatabase()
+    {
+        AllHours allHours = new AllHours("romana", "mate", "mate", "informatica", "antreprenoriala", "sport", "desen");
+        schedguleDatabase.child("Schedgule").setValue(allHours);
     }
 
     @Override

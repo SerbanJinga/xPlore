@@ -38,7 +38,6 @@ public class Post {
         result.put("body", body);
         result.put("starCount", likeCount);
         result.put("stars", likes);
-
         return result;
     }
     // [END post_to_map]

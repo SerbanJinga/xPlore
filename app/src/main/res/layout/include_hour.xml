@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/startHour"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:text="8:20"
+        style=":@style/Base.TextAppearance.AppCompat.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/currentHour"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        android:text="Ora pe care o avem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/intervalHour"
+        android:layout_marginTop="15dp"
+        android:text="8:20 - 9:30"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/teacherHour"
+            android:layout_marginTop="15dp"
+            android:text="Profesor : Mama Mama"
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+<TextView
+    android:id="@+id/classRoom"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="15dp"
+    android:text="Sala 220"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

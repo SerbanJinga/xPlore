@@ -1,5 +1,6 @@
 package com.roh44x.xPlore.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
+import com.roh44x.xPlore.PostDetailActivity;
 import com.roh44x.xPlore.R;
 import com.roh44x.xPlore.model.Post;
 import com.roh44x.xPlore.viewholder.PostViewHolder;
@@ -78,13 +80,21 @@ public  abstract class PostsFragment extends Fragment {
                 // Set click listener for the whole post view
                 final String postKey = postRef.getKey();
 
-
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), PostDetailActivity.class);
+                        intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
+                        startActivity(intent);
+                    }
+                });
 
                 if (model.likes.containsKey(getUid())) {
-                    viewHolder.starView.setImageResource(R.drawable.heart);
-                } else {
                     viewHolder.starView.setImageResource(R.drawable.heart_filled);
+                } else {
+                    viewHolder.starView.setImageResource(R.drawable.heart);
                 }
+
 
                 viewHolder.bindToBost(model, new View.OnClickListener() {
                     @Override

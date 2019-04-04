@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
         btnCreatePost.setOnClickListener(this);
+
+
+
+
     }
 
 
