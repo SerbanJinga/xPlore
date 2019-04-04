@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.roh44x.xPlore.model.AllHours;
+import com.roh44x.xPlore.model.Hour;
 import com.roh44x.xPlore.model.User;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
@@ -117,8 +118,22 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     public void storeSchedguleInDatabase()
     {
-        AllHours allHours = new AllHours("romana", "mate", "mate", "informatica", "antreprenoriala", "sport", "desen");
-        schedguleDatabase.child("Schedgule").setValue(allHours);
+        Hour hour1 = new Hour("12:45", "matematica", "12:45 - 13 : 30", "Mariana Nicolaescu", "220", "", "");
+        Hour hour2 = new Hour("13:35", "informatica", "13:35 - 14:20", "Simoneta Popa", "240", "", "");
+        Hour hour3 = new Hour("14:25", "romana", "14:25 - 15:10", "Rusanu Victor", "220", "", "");
+        Hour hour4 = new Hour("12:45", "matematica", "12:45 - 13 : 30", "Victor Ioan Nicolae", "200", "", "");
+        Hour hour5 = new Hour("12:45", "matematica", "12:45 - 13 : 30", "Mariana Nicolaescu", "220", "", "");
+        Hour hour6 = new Hour("12:45", "matematica", "12:45 - 13 : 30", "Mariana Nicolaescu", "220", "", "");
+        Hour hour7 = new Hour("12:45", "matematica", "12:45 - 13 : 30", "Mariana Nicolaescu", "220", "", "");
+
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour1").setValue(hour1);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour2").setValue(hour2);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour3").setValue(hour3);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour4").setValue(hour4);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour5").setValue(hour5);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour6").setValue(hour6);
+        schedguleDatabase.child("Schedgule").child("clasa a 9-a").child("hour7").setValue(hour7);
+
     }
 
     @Override

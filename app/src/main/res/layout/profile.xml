@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/buttonCamera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Camera" />
+    <ImageView
+        android:id="@+id/photoProfile"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/placeholder_user"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <TextView
+        android:id="@+id/nameProfile"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:text="Numele Meu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-<ImageView
-    android:id="@+id/imageProfile"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/profileDegree"
+        android:textSize="12dp"
+        android:textAlignment="center"
+        android:text="Student Profesor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/profileList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_post" />
+
 </LinearLayout>

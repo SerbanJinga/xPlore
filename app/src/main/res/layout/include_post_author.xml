@@ -26,7 +26,7 @@
         android:layout_marginRight="10dp"
         android:src="@drawable/more"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="200dp"
         android:layout_width="20dp"
         android:layout_height="20dp" />
 </LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
+
+    <include
+        android:id="@+id/postAuthorLayout"
+        layout="@layout/include_hour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/grades"
+        android:layout_below="@id/postAuthorLayout"
+        android:hint="Grades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/absences"
+        android:layout_below="@id/grades"
+        android:hint="Absences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/save"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/absences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

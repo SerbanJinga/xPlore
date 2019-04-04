@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.roh44x.xPlore.R;
 
 import java.text.DateFormat;
@@ -16,47 +18,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class EventFragment extends Fragment {
+public class EventFragment extends EventsAdapaterFragment {
 
 
-    private TextView dateTime;
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.event, container, false);
-
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-
-        return rootView;
-    }
-
-    private String getCurrentDay(int day) {
-        String currentDay = null;
-        switch (day) {
-            case 1:
-                currentDay = "Sunday";
-                break;
-            case 2:
-                currentDay = "Monday";
-                break;
-            case 3:
-                currentDay = "Tuesday";
-                break;
-            case 4:
-                currentDay = "Wednesday";
-                break;
-            case 5:
-                currentDay = "Thursday";
-                break;
-            case 6:
-                currentDay = "Friday";
-                break;
-            case 7:
-                currentDay = "Saturday";
-                break;
-        }
-        return currentDay;
+    public Query getQuery(DatabaseReference databaseReference) {
+        Query hourQuery = databaseReference.child("Schedgule").child("clasa a 9-a").limitToFirst(100);
+        return hourQuery;
     }
 }
